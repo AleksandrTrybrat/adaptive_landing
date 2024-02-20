@@ -1,3 +1,11 @@
+const ghPages = require('gh-pages');
+const path = require('path');
+
+function deploy(cb) {
+  ghPages.publish(path.join(process.cwd(), './app'), cb);
+}
+exports.deploy = deploy;
+
 const {
   src,
   dest,
